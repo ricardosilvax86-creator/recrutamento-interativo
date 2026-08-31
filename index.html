@@ -3,137 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Processo Seletivo Interativo</title>
+  <title>TalentPlay | Recrutamento Interativo</title>
+  <!-- Tailwind CSS via CDN: visual moderno sem instalar nada -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    body {
-      background-color: #0f172a;
-      color: #f8fafc;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 24px 16px;
-    }
-    .header {
-      max-width: 650px;
-      text-align: center;
-      margin-bottom: 28px;
-    }
-    .badge {
-      display: inline-block;
-      background-color: #1e293b;
-      color: #38bdf8;
-      border: 1px solid #38bdf8;
-      padding: 6px 14px;
-      border-radius: 9999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 14px;
-    }
-    h1 {
-      font-size: 1.85rem;
-      color: #f8fafc;
-      margin-bottom: 10px;
-    }
-    p.subtitle {
-      color: #94a3b8;
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-    .card {
-      background-color: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 12px;
-      padding: 24px;
-      max-width: 650px;
-      width: 100%;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
-    .features {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin: 20px 0;
-    }
-    .feature-item {
-      background: #0f172a;
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #1e293b;
-      font-size: 0.85rem;
-      color: #cbd5e1;
-    }
-    .feature-item strong {
-      display: block;
-      color: #38bdf8;
-      margin-bottom: 4px;
-    }
-    .btn-start {
-      display: block;
-      width: 100%;
-      padding: 14px;
-      background: #2563eb;
-      color: #ffffff;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-    .btn-start:hover {
-      background: #1d4ed8;
-    }
-    .footer-note {
-      text-align: center;
-      color: #64748b;
-      font-size: 0.8rem;
-      margin-top: 16px;
-    }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
   </style>
 </head>
-<body>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col selection:bg-blue-500 selection:text-white">
 
-  <div class="header">
-    <span class="badge">Nova Experiência de Seleção</span>
-    <h1>Triagem Prática com Mini RPG</h1>
-    <p class="subtitle">Chega de processos frios e vácuo. Aqui você responde a situações reais de trabalho e recebe retorno detalhado na hora.</p>
-  </div>
-
-  <div class="card">
-    <h2 style="font-size: 1.2rem; margin-bottom: 8px; color: #e2e8f0;">Vaga Piloto: Auxiliar de Operações</h2>
-    <p style="font-size: 0.9rem; color: #94a3b8;">Etapa 1: Simulação de Fit Cultural e Resolução de Problemas (Duração: ~5 minutos).</p>
-
-    <div class="features">
-      <div class="feature-item">
-        <strong>🎮 100% Interativo</strong>
-        Escolha caminhos práticos em vez de testes de lógica genéricos.
+  <!-- Barra de Navegação Superior -->
+  <header class="border-b border-slate-800/80 bg-slate-900/50 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center font-extrabold text-white text-lg shadow-lg shadow-blue-500/20">
+          T
+        </div>
+        <span class="font-bold text-lg tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">TalentPlay</span>
       </div>
-      <div class="feature-item">
-        <strong>⚡ Retorno Instantâneo</strong>
-        Veja seu relatório de pontos fortes assim que concluir a simulação.
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          Vaga Aberta
+        </span>
       </div>
     </div>
+  </header>
 
-    <button class="btn-start" onclick="iniciarDesafio()">Iniciar Desafio Interativo</button>
-    <p class="footer-note">Seus dados e respostas ficam protegidos e são avaliados de forma justa.</p>
-  </div>
+  <!-- Conteúdo Principal -->
+  <main class="flex-1 max-w-4xl mx-auto w-full px-4 sm:px-6 py-12 flex flex-col items-center justify-center">
+
+    <!-- Chamada Principal -->
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider mb-5">
+        Processo Seletivo Ágil
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
+        Chega de processos frios e vácuo.
+      </h1>
+      <p class="text-base sm:text-lg text-slate-400 leading-relaxed">
+        Demonstre sua tomada de decisão em situações reais de trabalho por meio de um desafio interativo e receba retorno detalhado na hora.
+      </p>
+    </div>
+
+    <!-- Card de Início da Vaga -->
+    <div class="w-full bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl shadow-black/40 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+        <div>
+          <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider">Oportunidade Piloto</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-white mt-1">Auxiliar de Operações & Rotinas</h2>
+          <p class="text-sm text-slate-400 mt-0.5">Empresa Parceira • Modelo Híbrido / Presencial</p>
+        </div>
+        <div class="flex sm:flex-col items-baseline sm:items-end gap-1">
+          <span class="text-xs text-slate-500 uppercase font-semibold">Etapa 1 de 2</span>
+          <span class="text-sm font-medium text-slate-300">Desafio de Fit (~5 min)</span>
+        </div>
+      </div>
+
+      <!-- Diferenciais em Grade -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
+        <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800/80">
+          <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold mb-3">1</div>
+          <h3 class="text-sm font-semibold text-slate-200 mb-1">Cenários Reais</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Escolha ações práticas diante de dilemas cotidianos de uma equipe.</p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800/80">
+          <div class="w-8 h-8 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold mb-3">2</div>
+          <h3 class="text-sm font-semibold text-slate-200 mb-1">Sem Pegadinhas</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Avaliação baseada no estilo de comunicação e priorização de tarefas.</p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800/80">
+          <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold mb-3">3</div>
+          <h3 class="text-sm font-semibold text-slate-200 mb-1">Retorno Garantido</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">Receba a análise das suas principais forças profissionais ao terminar.</p>
+        </div>
+      </div>
+
+      <!-- Botão de Ação -->
+      <button onclick="iniciarSimulacao()" class="w-full py-4 px-6 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-base shadow-lg shadow-blue-600/25 transition duration-200 flex items-center justify-center gap-2 group">
+        <span>Iniciar Desafio Interativo</span>
+        <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      </button>
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="border-t border-slate-900 py-6 text-center text-xs text-slate-500">
+    TalentPlay • Processos seletivos transparentes e humanizados
+  </footer>
 
   <script>
-    function iniciarDesafio() {
-      alert("Sucesso! Em breve aqui vai carregar o seu Mini RPG interativo.");
+    function iniciarSimulacao() {
+      alert("Pronto para o próximo passo! Aqui vamos plugar o mini RPG de fit cultural.");
     }
   </script>
-
 </body>
 </html>
