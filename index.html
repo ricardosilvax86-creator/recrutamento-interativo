@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Processo Seletivo Interativo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px;
+    }
+    .header {
+      max-width: 650px;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .badge {
+      display: inline-block;
+      background-color: #1e293b;
+      color: #38bdf8;
+      border: 1px solid #38bdf8;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: 1.85rem;
+      color: #f8fafc;
+      margin-bottom: 10px;
+    }
+    p.subtitle {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .card {
+      background-color: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 24px;
+      max-width: 650px;
+      width: 100%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .feature-item {
+      background: #0f172a;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #1e293b;
+      font-size: 0.85rem;
+      color: #cbd5e1;
+    }
+    .feature-item strong {
+      display: block;
+      color: #38bdf8;
+      margin-bottom: 4px;
+    }
+    .btn-start {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-start:hover {
+      background: #1d4ed8;
+    }
+    .footer-note {
+      text-align: center;
+      color: #64748b;
+      font-size: 0.8rem;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <span class="badge">Nova Experiência de Seleção</span>
+    <h1>Triagem Prática com Mini RPG</h1>
+    <p class="subtitle">Chega de processos frios e vácuo. Aqui você responde a situações reais de trabalho e recebe retorno detalhado na hora.</p>
+  </div>
+
+  <div class="card">
+    <h2 style="font-size: 1.2rem; margin-bottom: 8px; color: #e2e8f0;">Vaga Piloto: Auxiliar de Operações</h2>
+    <p style="font-size: 0.9rem; color: #94a3b8;">Etapa 1: Simulação de Fit Cultural e Resolução de Problemas (Duração: ~5 minutos).</p>
+
+    <div class="features">
+      <div class="feature-item">
+        <strong>🎮 100% Interativo</strong>
+        Escolha caminhos práticos em vez de testes de lógica genéricos.
+      </div>
+      <div class="feature-item">
+        <strong>⚡ Retorno Instantâneo</strong>
+        Veja seu relatório de pontos fortes assim que concluir a simulação.
+      </div>
+    </div>
+
+    <button class="btn-start" onclick="iniciarDesafio()">Iniciar Desafio Interativo</button>
+    <p class="footer-note">Seus dados e respostas ficam protegidos e são avaliados de forma justa.</p>
+  </div>
+
+  <script>
+    function iniciarDesafio() {
+      alert("Sucesso! Em breve aqui vai carregar o seu Mini RPG interativo.");
+    }
+  </script>
+
+</body>
+</html>
