@@ -56,33 +56,66 @@
       </div>
     </div>
 
-    <!-- Navegação Enxuta -->
+    <!-- Navegação Organizada por Categorias -->
     <div class="flex-1 overflow-y-auto menu-scroll py-4 flex flex-col justify-between">
       
-      <div class="space-y-1 px-3">
-        <a href="#" class="flex items-center gap-3 px-4 py-3 bg-indigo-500/10 text-indigo-400 rounded-xl font-bold border border-indigo-500/20 text-sm shadow-sm transition-all">
-          <i class="ph ph-squares-four text-xl"></i> Painel Inicial
-        </a>
-        <a href="#" class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 rounded-xl font-medium transition-colors text-sm">
-          <i class="ph ph-user-circle-gear text-xl"></i> Meu Personagem & CV
-        </a>
-        <a href="#" class="flex items-center gap-3 px-4 py-3 text-emerald-400 hover:bg-emerald-500/10 hover:text-emerald-300 rounded-xl font-medium transition-colors text-sm">
-          <i class="ph ph-map-trifold text-xl"></i> Taverna de Vagas
-        </a>
-        <a href="#" class="flex items-center justify-between px-4 py-3 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 rounded-xl font-medium transition-colors text-sm">
-          <div class="flex items-center gap-3"><i class="ph ph-sword text-xl"></i> Minhas Missões</div>
-          <span class="bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 text-[10px] font-bold px-2 py-0.5 rounded-md">1 Ativa</span>
-        </a>
-        <a href="#" class="flex items-center justify-between px-4 py-3 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 rounded-xl font-medium transition-colors text-sm">
-          <div class="flex items-center gap-3"><i class="ph ph-chat-circle-dots text-xl"></i> Mensagens</div>
-          <span class="bg-indigo-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-md">2</span>
-        </a>
+      <div class="flex flex-col gap-6">
+        
+        <!-- Categoria: Página Inicial -->
+        <div>
+          <p class="px-5 text-[10px] font-extrabold text-slate-500 uppercase tracking-widest mb-2">Página Inicial</p>
+          <div class="space-y-1 px-3">
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 bg-indigo-500/10 text-indigo-400 rounded-xl font-bold border border-indigo-500/20 text-sm shadow-sm transition-all">
+              <i class="ph ph-house text-xl"></i> Início
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 rounded-xl font-medium transition-colors text-sm">
+              <i class="ph ph-user-circle-gear text-xl"></i> Meu Personagem & CV
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 rounded-xl font-medium transition-colors text-sm">
+              <i class="ph ph-paper-plane-tilt text-xl"></i> Minhas Candidaturas
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-emerald-400 hover:bg-emerald-500/10 hover:text-emerald-300 rounded-xl font-medium transition-colors text-sm">
+              <i class="ph ph-briefcase text-xl"></i> Oportunidades
+            </a>
+          </div>
+        </div>
+
+        <!-- Categoria: Sua Jornada -->
+        <div>
+          <p class="px-5 text-[10px] font-extrabold text-slate-500 uppercase tracking-widest mb-2">Sua Jornada</p>
+          <div class="space-y-1 px-3">
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 rounded-xl font-medium transition-colors text-sm">
+              <i class="ph ph-user-circle text-xl"></i> Meu Personagem
+            </a>
+            <a href="#" class="flex items-center justify-between px-4 py-2.5 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 rounded-xl font-medium transition-colors text-sm">
+              <div class="flex items-center gap-3"><i class="ph ph-sword text-xl"></i> Testes e Missões</div>
+              <span class="bg-indigo-500/20 text-indigo-400 border border-indigo-500/30 text-[10px] font-bold px-2 py-0.5 rounded-md">1 Ativa</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 rounded-xl font-medium transition-colors text-sm">
+              <i class="ph ph-trophy text-xl text-yellow-500"></i> Conquistas e Ranking
+            </a>
+          </div>
+        </div>
+
+        <!-- Categoria: Outros -->
+        <div>
+          <p class="px-5 text-[10px] font-extrabold text-slate-500 uppercase tracking-widest mb-2">Outros</p>
+          <div class="space-y-1 px-3">
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 rounded-xl font-medium transition-colors text-sm">
+              <i class="ph ph-star-half text-xl"></i> Avaliação das Empresas
+            </a>
+            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 rounded-xl font-medium transition-colors text-sm">
+              <i class="ph ph-users-three text-xl"></i> Mentorias
+            </a>
+          </div>
+        </div>
+        
       </div>
 
-      <!-- Botão Modo Empresa -->
+      <!-- Botão Área do Recrutador -->
       <div class="px-4 mt-6 mb-2">
         <a href="#" class="flex items-center justify-center gap-2 w-full py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl font-semibold transition-colors text-sm border border-slate-700 shadow-inner group">
-          <i class="ph ph-buildings text-lg group-hover:text-indigo-400 transition-colors"></i> Modo Recrutador
+          <i class="ph ph-buildings text-lg group-hover:text-indigo-400 transition-colors"></i> Área do Recrutador
         </a>
       </div>
     </div>
@@ -116,15 +149,24 @@
         <span class="font-bold text-lg text-white">TalentPlay</span>
       </div>
       
-      <!-- Busca global oculta no PC, pois agora temos a do banner -->
+      <!-- Texto oculto no celular -->
       <div class="hidden md:flex items-center text-slate-500 text-sm font-medium">
         Painel Inicial do Candidato
       </div>
 
-      <!-- Notificações -->
-      <div class="flex items-center gap-4 ml-auto">
+      <!-- Mensagens e Notificações (NOVO LAYOUT) -->
+      <div class="flex items-center gap-5 ml-auto">
+        <!-- Ícone de Mensagens -->
+        <button class="relative text-slate-400 hover:text-white transition-colors">
+          <i class="ph ph-chat-circle-dots text-2xl"></i>
+          <!-- Bolinha vermelha com o número -->
+          <span class="absolute -top-1.5 -right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-indigo-600 text-[9px] font-bold text-white border-2 border-slate-900">2</span>
+        </button>
+        
+        <!-- Ícone de Notificações -->
         <button class="relative text-slate-400 hover:text-white transition-colors">
           <i class="ph ph-bell text-2xl"></i>
+          <!-- Bolinha vermelha simples -->
           <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-slate-900"></span>
         </button>
       </div>
