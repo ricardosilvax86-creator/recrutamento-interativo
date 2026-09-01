@@ -183,6 +183,112 @@
     function iniciarRPG() {
       alert("Abrindo o simulador do estudo de caso! Aqui carregaremos a tela do Twine ou Genially.");
     }
+  <!-- MODAL DO MINI RPG (Escondido por padrão) -->
+  <div id="rpg-modal" class="fixed inset-0 bg-slate-950/90 backdrop-blur-sm z-50 hidden flex flex-col items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+    
+    <!-- Caixa de Diálogo (Estilo RPG Moderno) -->
+    <div class="max-w-2xl w-full bg-slate-900 border-2 border-indigo-500/50 rounded-xl shadow-2xl shadow-indigo-500/20 overflow-hidden flex flex-col">
+      
+      <!-- Cabeçalho do NPC / Sistema -->
+      <div class="bg-slate-950 px-4 py-3 border-b border-slate-800 flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-indigo-600 border border-indigo-400 flex items-center justify-center text-xl">
+          👨‍💼
+        </div>
+        <div>
+          <h4 class="text-white font-bold text-sm">Sistema de Triagem</h4>
+          <p class="text-xs text-indigo-400">Cena 1: O Caos Matinal</p>
+        </div>
+      </div>
+
+      <!-- Área de Texto e Opções -->
+      <div class="p-6">
+        <p id="rpg-text" class="text-slate-300 text-lg leading-relaxed min-h-[100px] mb-6 font-medium"></p>
+        
+        <!-- Botões de Escolha (Escondidos até o texto terminar) -->
+        <div id="rpg-choices" class="space-y-3 hidden">
+          <button onclick="escolherOpcao('A')" class="w-full text-left p-4 bg-slate-800 hover:bg-indigo-600 border border-slate-700 hover:border-indigo-400 rounded-lg text-slate-200 text-sm transition-all">
+            <strong class="text-indigo-400 mr-2">A)</strong> Ignoro o telefone por enquanto, imprimo o relatório e entrego na mão do gerente para garantir a reunião dele.
+          </button>
+          
+          <button onclick="escolherOpcao('B')" class="w-full text-left p-4 bg-slate-800 hover:bg-indigo-600 border border-slate-700 hover:border-indigo-400 rounded-lg text-slate-200 text-sm transition-all">
+            <strong class="text-indigo-400 mr-2">B)</strong> Atendo o fornecedor e tento acalmá-lo enquanto uso a outra mão no mouse para tentar imprimir o relatório ao mesmo tempo.
+          </button>
+          
+          <button onclick="escolherOpcao('C')" class="w-full text-left p-4 bg-slate-800 hover:bg-indigo-600 border border-slate-700 hover:border-indigo-400 rounded-lg text-slate-200 text-sm transition-all">
+            <strong class="text-indigo-400 mr-2">C)</strong> Aviso o gerente ("Já vou imprimir!"), atendo o telefone pedindo 1 minuto ao fornecedor e pego a impressão.
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTELIGÊNCIA DO JOGO (JavaScript) -->
+  <script>
+    const modal = document.getElementById('rpg-modal');
+    const textContainer = document.getElementById('rpg-text');
+    const choicesContainer = document.getElementById('rpg-choices');
+    
+    let pontuacao = 0;
+    const cena1Texto = "Você acaba de ser contratado. São 08h00. Imediatamente, um fornecedor liga irritado, seu gerente para na sua mesa pedindo um relatório urgente para uma reunião agora, e os chamados de suporte começam a apitar. O que você faz primeiro?";
+
+    // Função para abrir o jogo
+    function iniciarRPG() {
+      modal.classList.remove('hidden');
+      // Pequeno delay para a transição suave
+      setTimeout(() => modal.classList.remove('opacity-0'), 50);
+      
+      textContainer.innerHTML = '';
+      choicesContainer.classList.add('hidden');
+      digitarTexto(cena1Texto, 0);
+    }
+
+    // Efeito de Máquina de Escrever (RPG Clássico)
+    function digitarTexto(texto, index) {
+      if (index < texto.length) {
+        textContainer.innerHTML += texto.charAt(index);
+        setTimeout(() => digitarTexto(texto, index + 1), 30); // 30ms por letra
+      } else {
+        // Mostra as opções quando o texto termina
+        choicesContainer.classList.remove('hidden');
+      }
+    }
+
+    // Lógica ao clicar em uma resposta
+    function escolherOpcao(opcao) {
+      // Esconde as opções para não clicar duas vezes
+      choicesContainer.classList.add('hidden');
+      
+      let feedback = "";
+      
+      if(opcao === 'A') {
+        pontuacao += 10; // Foco na hierarquia, mas perdeu o resto
+        feedback = "Você garantiu a reunião, mas o fornecedor desligou na sua cara e o suporte virou uma bola de neve. Cuidado com a visão de túnel!";
+      } else if (opcao === 'B') {
+        pontuacao += 5; // Malabarista desorganizado
+        feedback = "Você tentou abraçar o mundo, mas enviou o relatório errado para a impressora e não resolveu o problema do fornecedor.";
+      } else if (opcao === 'C') {
+        pontuacao += 20; // Comunicação assertiva (Melhor nota)
+        feedback = "Excelente inteligência emocional! Você comunicou os próximos passos para o gerente, reteve o fornecedor na linha e agiu com clareza sob pressão.";
+      }
+
+      // Mostra o resultado da Cena 1
+      textContainer.innerHTML = `<span class="text-emerald-400 font-bold">[Análise do Sistema]</span><br><br>${feedback}<br><br>Sua nota até aqui: ${pontuacao} XP.`;
+      
+      // Botão para avançar ou fechar (Por enquanto fecha)
+      setTimeout(() => {
+        choicesContainer.innerHTML = `<button onclick="fecharRPG()" class="w-full text-center p-4 bg-emerald-600 hover:bg-emerald-500 rounded-lg text-white font-bold transition-all">Encerrar Protótipo (Por Enquanto)</button>`;
+        choicesContainer.classList.remove('hidden');
+      }, 1000);
+    }
+
+    function fecharRPG() {
+      modal.classList.add('opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        // Reseta tudo para jogar de novo
+        pontuacao = 0; 
+      }, 300);
+    }
   </script>
 </body>
 </html>
