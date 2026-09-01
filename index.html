@@ -303,6 +303,81 @@
       </div>
     </div>
   </div>
+  <!-- ==========================================
+       MODAL DE LOGIN E CADASTRO
+       ========================================== -->
+  <div id="login-modal" class="fixed inset-0 bg-slate-950/90 backdrop-blur-sm z-[60] hidden flex-col items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+    <div class="max-w-md w-full bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl overflow-hidden relative">
+      
+      <!-- Botão Fechar -->
+      <button onclick="fecharLogin()" class="absolute top-4 right-4 text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 w-8 h-8 rounded-full flex items-center justify-center transition-colors z-10">
+        <i class="ph ph-x"></i>
+      </button>
+
+      <!-- Decoração de Fundo -->
+      <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-br from-indigo-600/20 to-purple-600/20 blur-2xl pointer-events-none"></div>
+
+      <div class="p-8 relative z-10">
+        
+        <!-- Cabeçalho -->
+        <div class="text-center mb-8">
+          <div class="w-12 h-12 rounded-xl bg-indigo-600 flex items-center justify-center font-bold text-white text-2xl mx-auto mb-3 shadow-lg shadow-indigo-500/30">T</div>
+          <h3 class="text-2xl font-extrabold text-white">Acesse a Taverna</h3>
+          <p class="text-sm text-slate-400 mt-1">Faça login ou crie sua conta para jogar</p>
+        </div>
+
+        <!-- Abas Login / Cadastro -->
+        <div class="flex p-1 bg-slate-950 rounded-lg mb-6">
+          <button class="flex-1 py-2 bg-slate-800 text-white text-sm font-bold rounded-md shadow-sm transition-colors">Entrar</button>
+          <button class="flex-1 py-2 text-slate-400 hover:text-white text-sm font-bold rounded-md transition-colors">Cadastrar</button>
+        </div>
+
+        <!-- Formulário (Por enquanto visual) -->
+        <form onsubmit="event.preventDefault(); alert('Em breve conectaremos ao Banco de Dados!');" class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1.5">E-mail</label>
+            <div class="relative">
+              <i class="ph ph-envelope absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg"></i>
+              <input type="email" placeholder="seu@email.com" class="w-full bg-slate-950 border border-slate-700 text-white text-sm rounded-lg pl-10 pr-4 py-3 focus:outline-none focus:border-indigo-500 transition-colors" required>
+            </div>
+          </div>
+          
+          <div>
+            <div class="flex justify-between items-center mb-1.5">
+              <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider">Senha</label>
+              <a href="#" class="text-xs text-indigo-400 hover:text-indigo-300 font-medium">Esqueceu?</a>
+            </div>
+            <div class="relative">
+              <i class="ph ph-lock absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-lg"></i>
+              <input type="password" placeholder="••••••••" class="w-full bg-slate-950 border border-slate-700 text-white text-sm rounded-lg pl-10 pr-4 py-3 focus:outline-none focus:border-indigo-500 transition-colors" required>
+            </div>
+          </div>
+
+          <button type="submit" class="w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-bold text-sm transition-colors shadow-lg shadow-indigo-600/20 mt-2">
+            Entrar no Sistema
+          </button>
+        </form>
+
+        <!-- Divisor -->
+        <div class="flex items-center gap-3 my-6">
+          <div class="flex-1 h-px bg-slate-800"></div>
+          <span class="text-xs text-slate-500 font-medium">OU</span>
+          <div class="flex-1 h-px bg-slate-800"></div>
+        </div>
+
+        <!-- Botões Sociais -->
+        <div class="grid grid-cols-2 gap-3">
+          <button class="flex items-center justify-center gap-2 py-2.5 bg-slate-950 border border-slate-700 hover:border-slate-500 rounded-lg text-sm font-medium text-slate-300 transition-colors">
+            <i class="ph ph-google-logo text-lg"></i> Google
+          </button>
+          <button class="flex items-center justify-center gap-2 py-2.5 bg-slate-950 border border-slate-700 hover:border-slate-500 rounded-lg text-sm font-medium text-slate-300 transition-colors">
+            <i class="ph ph-github-logo text-lg"></i> GitHub
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <script>
     const modal = document.getElementById('rpg-modal');
@@ -357,6 +432,22 @@
       setTimeout(() => {
         modal.classList.add('hidden');
         pontuacao = 0; 
+      }, 300);
+    }
+    // Funções do Modal de Login
+    const loginModal = document.getElementById('login-modal');
+
+    function abrirLogin() {
+      loginModal.classList.remove('hidden');
+      setTimeout(() => loginModal.classList.remove('opacity-0'), 50);
+      loginModal.classList.add('flex');
+    }
+
+    function fecharLogin() {
+      loginModal.classList.add('opacity-0');
+      setTimeout(() => {
+        loginModal.classList.add('hidden');
+        loginModal.classList.remove('flex');
       }, 300);
     }
   </script>
