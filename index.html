@@ -117,38 +117,32 @@
       </div>
     </div>
 
-    <!-- Rodapé Inovador: HUD do Sistema -->
-    <div class="p-4 border-t border-slate-800 bg-slate-950/80 backdrop-blur-md flex flex-col gap-3">
+    <!-- Rodapé Inovador e Compacto -->
+    <div class="px-2 py-3 border-t border-slate-800 bg-slate-950/80 backdrop-blur-md flex items-center justify-between">
       
-      <!-- Indicador de Status (Vibe Game Launcher) -->
-      <div class="flex items-center justify-between px-3 py-2.5 bg-slate-900 rounded-lg border border-slate-800/60 shadow-inner">
-        <div class="flex items-center gap-2.5">
-          <span class="relative flex h-2.5 w-2.5">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>
-          </span>
-          <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">Sistema Online</span>
-        </div>
-        <span class="text-[10px] text-slate-500 font-mono font-bold" title="Latência do Servidor">12ms</span>
-      </div>
+      <button class="flex flex-col items-center gap-1 text-slate-500 hover:text-indigo-400 group transition-all flex-1" title="Configurações">
+        <i class="ph ph-gear-six text-xl group-hover:rotate-90 transition-transform duration-500"></i>
+        <span class="text-[9px] font-bold uppercase tracking-wider">Ajustes</span>
+      </button>
+      
+      <button class="flex flex-col items-center gap-1 text-slate-500 hover:text-blue-400 group transition-all flex-1" title="Idioma (PT-BR)">
+        <i class="ph ph-globe-hemisphere-west text-xl group-hover:scale-110 transition-transform"></i>
+        <span class="text-[9px] font-bold uppercase tracking-wider">Idioma</span>
+      </button>
+      
+      <button class="flex flex-col items-center gap-1 text-slate-500 hover:text-emerald-400 group transition-all flex-1" title="Privacidade e Termos">
+        <i class="ph ph-shield-check text-xl group-hover:scale-110 transition-transform"></i>
+        <span class="text-[8px] font-bold uppercase tracking-wider">Privacidade</span>
+      </button>
+      
+      <button class="flex flex-col items-center gap-1 text-slate-500 hover:text-yellow-400 group transition-all flex-1" title="Central de Ajuda">
+        <i class="ph ph-lifebuoy text-xl group-hover:animate-pulse"></i>
+        <span class="text-[9px] font-bold uppercase tracking-wider">Ajuda</span>
+      </button>
 
-      <!-- Mini-Dock de Controle -->
-      <div class="flex items-center justify-between px-1 mt-1">
-        <button class="p-2 text-slate-500 hover:text-indigo-400 hover:bg-indigo-500/10 rounded-lg transition-all group relative" title="Configurações">
-          <i class="ph ph-gear-six text-xl group-hover:rotate-90 transition-transform duration-500"></i>
-        </button>
-        <button class="p-2 text-slate-500 hover:text-blue-400 hover:bg-blue-500/10 rounded-lg transition-all group relative" title="Idioma (PT-BR)">
-          <i class="ph ph-globe-hemisphere-west text-xl group-hover:scale-110 transition-transform"></i>
-        </button>
-        <button class="p-2 text-slate-500 hover:text-emerald-400 hover:bg-emerald-500/10 rounded-lg transition-all group relative" title="Privacidade e LGPD">
-          <i class="ph ph-shield-check text-xl group-hover:scale-110 transition-transform"></i>
-        </button>
-        <button class="p-2 text-slate-500 hover:text-yellow-400 hover:bg-yellow-500/10 rounded-lg transition-all group relative" title="Central de Ajuda">
-          <i class="ph ph-lifebuoy text-xl hover:animate-pulse"></i>
-        </button>
-      </div>
     </div>
   </aside>
+  
   <!-- ==========================================
        ÁREA PRINCIPAL
        ========================================== -->
