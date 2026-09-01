@@ -27,25 +27,33 @@
   <!-- ==========================================
        BARRA LATERAL (SIDEBAR) CANDIDATO
        ========================================== -->
-  <aside class="w-72 bg-slate-900 border-r border-slate-800 flex flex-col hidden md:flex z-20 shrink-0">
+  <aside class="w-72 bg-slate-900 border-r border-slate-800 flex flex-col hidden md:flex z-20 shrink-0 shadow-2xl">
     
     <!-- Player Card -->
-    <div class="p-5 border-b border-slate-800 bg-slate-900/80 backdrop-blur-sm relative overflow-hidden">
-      <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl"></div>
+    <div class="p-5 border-b border-slate-800 bg-slate-900/80 backdrop-blur-sm relative overflow-hidden group">
+      <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none"></div>
       
       <div class="flex items-center gap-3 relative z-10">
-        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Ricardo" alt="Avatar" class="w-12 h-12 rounded-xl bg-slate-800 border-2 border-indigo-500/50 p-0.5">
+        <div class="relative">
+          <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Ricardo" alt="Avatar" class="w-12 h-12 rounded-xl bg-slate-800 border-2 border-indigo-500/50 p-0.5 object-cover">
+        </div>
         <div class="flex-1 overflow-hidden">
-          <h2 class="text-white font-bold text-sm truncate">ricardo.lima</h2>
-          <p class="text-xs text-slate-400 truncate">ricardo@teste.com.br</p>
-          <p class="text-[11px] font-semibold text-indigo-400 mt-0.5 uppercase tracking-wide truncate">Auxiliar Administrativo</p>
+          <div class="flex items-center justify-between">
+            <h2 class="text-white font-bold text-sm truncate">Ricardo Lima</h2>
+            <!-- Canetinha de Editar -->
+            <button class="text-slate-400 hover:text-white bg-slate-800/50 hover:bg-indigo-500/50 p-1.5 rounded-md transition-colors" title="Editar Perfil">
+              <i class="ph ph-pencil-simple text-sm"></i>
+            </button>
+          </div>
+          <p class="text-[10px] text-slate-400 truncate">@ricardo.lima</p>
+          <p class="text-[11px] font-semibold text-indigo-400 mt-1 uppercase tracking-wide truncate">Auxiliar Administrativo</p>
         </div>
       </div>
       
       <!-- Progresso CV -->
       <div class="mt-4 relative z-10">
         <div class="flex justify-between items-end mb-1.5">
-          <span class="text-xs font-medium text-slate-300">Currículo Completo</span>
+          <span class="text-xs font-medium text-slate-300">Força do Currículo</span>
           <span class="text-xs font-bold text-indigo-400">80%</span>
         </div>
         <div class="w-full bg-slate-950 rounded-full h-1.5 border border-slate-800">
@@ -69,9 +77,6 @@
               <i class="ph ph-house text-xl"></i> Início
             </a>
             <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 rounded-xl font-medium transition-colors text-sm">
-              <i class="ph ph-user-circle-gear text-xl"></i> Meu Personagem & CV
-            </a>
-            <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 rounded-xl font-medium transition-colors text-sm">
               <i class="ph ph-paper-plane-tilt text-xl"></i> Minhas Candidaturas
             </a>
             <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-emerald-400 hover:bg-emerald-500/10 hover:text-emerald-300 rounded-xl font-medium transition-colors text-sm">
@@ -85,7 +90,7 @@
           <p class="px-5 text-[10px] font-extrabold text-slate-500 uppercase tracking-widest mb-2">Sua Jornada</p>
           <div class="space-y-1 px-3">
             <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 rounded-xl font-medium transition-colors text-sm">
-              <i class="ph ph-user-circle text-xl"></i> Meu Personagem
+              <i class="ph ph-user-circle-gear text-xl"></i> Meu Personagem & CV
             </a>
             <a href="#" class="flex items-center justify-between px-4 py-2.5 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 rounded-xl font-medium transition-colors text-sm">
               <div class="flex items-center gap-3"><i class="ph ph-sword text-xl"></i> Testes e Missões</div>
@@ -112,10 +117,10 @@
         
       </div>
 
-      <!-- Botão Área do Recrutador -->
+      <!-- Botão Área do Recrutador (MAIS CHAMATIVO) -->
       <div class="px-4 mt-6 mb-2">
-        <a href="#" class="flex items-center justify-center gap-2 w-full py-3 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl font-semibold transition-colors text-sm border border-slate-700 shadow-inner group">
-          <i class="ph ph-buildings text-lg group-hover:text-indigo-400 transition-colors"></i> Área do Recrutador
+        <a href="#" class="flex items-center justify-center gap-2 w-full py-3.5 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white rounded-xl font-bold transition-all transform hover:-translate-y-0.5 text-sm shadow-[0_0_15px_rgba(124,58,237,0.3)] hover:shadow-[0_0_20px_rgba(124,58,237,0.5)] border border-violet-400/30">
+          <i class="ph ph-buildings text-xl"></i> Área do Recrutador
         </a>
       </div>
     </div>
@@ -154,19 +159,15 @@
         Painel Inicial do Candidato
       </div>
 
-      <!-- Mensagens e Notificações (NOVO LAYOUT) -->
+      <!-- Mensagens e Notificações -->
       <div class="flex items-center gap-5 ml-auto">
-        <!-- Ícone de Mensagens -->
         <button class="relative text-slate-400 hover:text-white transition-colors">
           <i class="ph ph-chat-circle-dots text-2xl"></i>
-          <!-- Bolinha vermelha com o número -->
           <span class="absolute -top-1.5 -right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-indigo-600 text-[9px] font-bold text-white border-2 border-slate-900">2</span>
         </button>
         
-        <!-- Ícone de Notificações -->
         <button class="relative text-slate-400 hover:text-white transition-colors">
           <i class="ph ph-bell text-2xl"></i>
-          <!-- Bolinha vermelha simples -->
           <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-slate-900"></span>
         </button>
       </div>
